@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: MixerUI.PcbDoc   10/22/2024  11:36:19 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : MixerUI-RoundHoles.TXT
+ASCII SlotHoles File : MixerUI-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      0.406mm (16mil)                                           Round             252       PTH        1022.08mm (40.24inch)
+T2      1mm (39mil)                                               Round             32        PTH        186.21mm (7.33inch)
+T3      1.1mm (43mil)                                             Round             13        PTH        35.05mm (1.38inch)
+T4      1.35mm (53mil)                                            Round             12        PTH        234.40mm (9.23inch)
+T5      1.8mm (71mil)                                             Slot              16        PTH        491.47mm (19.35inch)
+T6      2.54mm (100mil)                                           Round             2         PTH        87.63mm (3.45inch)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              327
+
+Total Processing Time (hh:mm:ss) : 00:00:00
