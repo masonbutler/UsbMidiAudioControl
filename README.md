@@ -7,6 +7,8 @@ I decided to go with 4 channels, providing 1 fader (to control volume) and 2 but
 
 ![MixerUIBoard](https://github.com/user-attachments/assets/2933306d-4589-4577-92bf-61d3b3fa3a81)
 
+This was also a great learning experience to bring up a USB device since I've never actually coded USB stuff low level and I've never dug into the descriptors for audio/MIDI devices. Safe to say, I learned a lot!  
+
 ## How does it work?
 
 - Plug it in to the computer's USB port
