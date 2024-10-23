@@ -32,8 +32,8 @@ void InitLeds()
 							 green,
 							 green,
 							 green,
-							 orange,
 							 yellow,
+							 orange,
 							 red,
 							 red,
 			
