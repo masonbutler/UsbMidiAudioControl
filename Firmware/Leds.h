@@ -1,0 +1,107 @@
+#ifndef LEDS_H_
+#define LEDS_H_
+
+#define NUM_LEDS	56U
+
+#define NUM_LEDS_PER_FADER	12
+
+#define DEFAULT_COLOUR_ON	{0, 0, 15}
+#define DEFAULT_COLOUR_OFF	{15, 0, 15}
+
+typedef enum {
+	LED_NUM_START = 0,
+	LED_NUM_CHAN4_SOLO = 0,
+	LED_NUM_CHAN4_MUTE,
+	LED_NUM_CHAN3_SOLO,
+	LED_NUM_CHAN3_MUTE,
+	LED_NUM_CHAN2_SOLO,
+	LED_NUM_CHAN2_MUTE,
+	LED_NUM_CHAN1_SOLO,
+	LED_NUM_CHAN1_MUTE,
+	
+	LED_NUM_FADER1_0,  //8
+	LED_NUM_FADER1_1,
+	LED_NUM_FADER1_2,
+	LED_NUM_FADER1_3,
+	LED_NUM_FADER1_4,
+	LED_NUM_FADER1_5,
+	LED_NUM_FADER1_6,
+	LED_NUM_FADER1_7,
+	LED_NUM_FADER1_8,
+	LED_NUM_FADER1_9,
+	LED_NUM_FADER1_10,
+	LED_NUM_FADER1_11, // 19
+	
+	LED_NUM_FADER2_0, // 20
+	LED_NUM_FADER2_1,
+	LED_NUM_FADER2_2,
+	LED_NUM_FADER2_3,
+	LED_NUM_FADER2_4,
+	LED_NUM_FADER2_5,
+	LED_NUM_FADER2_6,
+	LED_NUM_FADER2_7,
+	LED_NUM_FADER2_8,
+	LED_NUM_FADER2_9,
+	LED_NUM_FADER2_10,
+	LED_NUM_FADER2_11, // 31
+	
+	LED_NUM_FADER3_0, //32
+	LED_NUM_FADER3_1,
+	LED_NUM_FADER3_2,
+	LED_NUM_FADER3_3,
+	LED_NUM_FADER3_4,
+	LED_NUM_FADER3_5,
+	LED_NUM_FADER3_6,
+	LED_NUM_FADER3_7,
+	LED_NUM_FADER3_8,
+	LED_NUM_FADER3_9,
+	LED_NUM_FADER3_10,
+	LED_NUM_FADER3_11, // 43
+	
+	LED_NUM_FADER4_0, // 44
+	LED_NUM_FADER4_1,
+	LED_NUM_FADER4_2,
+	LED_NUM_FADER4_3,
+	LED_NUM_FADER4_4,
+	LED_NUM_FADER4_5,
+	LED_NUM_FADER4_6,
+	LED_NUM_FADER4_7,
+	LED_NUM_FADER4_8,
+	LED_NUM_FADER4_9,
+	LED_NUM_FADER4_10,
+	LED_NUM_FADER4_11, // 55
+	
+	LED_NUM_END,
+} LED_NUM;
+
+typedef enum {
+	LED_STATE_OFF = 0,
+	LED_STATE_ON
+} LED_STATE;
+
+typedef struct {
+	uint8_t r;
+	uint8_t g;
+	uint8_t b;
+} sRGBColour;
+
+typedef struct {
+	LED_STATE ledState;
+	sRGBColour onColour;
+	sRGBColour offColour;
+} sLedData;
+
+void InitLeds();
+void UpdateLedColourDataAll();
+void UpdateLedColourData(LED_NUM ledNum);
+void SendLedData();
+
+void SetLed(LED_NUM ledNum, LED_STATE state, sRGBColour onCol, sRGBColour offCol);
+void SetLedColour1(LED_NUM ledNum, sRGBColour onCol);
+void SetLedColour2(LED_NUM ledNum, sRGBColour offCol);
+void SetLedState(LED_NUM ledNum, LED_STATE state);
+
+
+LED_STATE GetLedState(LED_NUM ledNum);
+
+#endif /* LEDS_H_ */
