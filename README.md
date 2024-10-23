@@ -7,12 +7,24 @@ I decided to go with 4 channels, providing 1 fader (to control volume) and 2 but
 
 ![MixerUIBoard](https://github.com/user-attachments/assets/2933306d-4589-4577-92bf-61d3b3fa3a81)
 
+## How does it work?
 
-# Technical stuff
+- Plug it in to the computer's USB port
+- Open Reaper
+- Select the device as a MIDI device (Device name: DAW Control)
+- Enable MIDI input from device by right clicking the device and pressing "Enable Input"
+<img width="485" alt="image" src="https://github.com/user-attachments/assets/ede38995-f148-491e-9e00-55ebf9f129e6">
+
+- Assign the actions in the Actions tab of the program. I assigned the fader to the volume (0-127 since it is MIDI), and one button to MUTE and one button to RECORD.
+
+<img width="596" alt="image" src="https://github.com/user-attachments/assets/143780e2-802c-4502-9fbd-1277968c02ba">
+
+
+## Technical stuff
 The project uses an ATSAM L21 Explained Pro Devboard. Each linear fader goes into an ADC channel on the devboard, based upon tests the actual ADC value conversion has a range of 32-4080. The buttons are handled by a shift register that reads in the data over a SPI bus. The LED data is converted to a binary stream to provide the correct data format for a WS2812B LED then output over SPI.
 
 
-# Physical Connections
+## Physical Connections
 
 PA22: UART TX
 
@@ -38,11 +50,11 @@ PA6: Fader 3 (ADC Channel 6)
 
 PA7: Fader 4 (ADC Channel 7)
 
-# Compiling
+## Compiling
 Download Microchip Studio (Atmel Studio) 7.0.2594
 Open project file from repo
 
-# PCB
+## PCB
 <img width="605" alt="image" src="https://github.com/user-attachments/assets/0f8f3ac8-8002-4e06-8617-ccfd09e8ca8a">
 
 
@@ -50,7 +62,7 @@ A 4 layer (pretty simple) board. It was same price as 2 layer at JLCPCB, so why 
 
 It's has purple soldermask and is pretty. 
 
-# Dumb things I did
+## Dumb things I did
 I did a few dumb things doing this:
 
 I used LEDs ordered off Aliexpress expecting no real problems...ha ha ha.
